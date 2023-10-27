@@ -1,0 +1,71 @@
+<html xmlns:th="http:www.thymeLeaf.org">
+<head>
+<title>Registration form</title>
+</head>
+<style> 
+body{
+    background-image: url(11.jpg);
+    margin-top: 100px;
+    padding-right: 30%;
+}
+h3{
+font-style: italic;
+ font-size: x-large; 
+ color:rgb(230, 190, 190);
+padding-left:500px;
+
+}
+h1{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+color:red;
+padding-left:530px;
+font-size:xx-large;
+}
+button[type="submit"]
+{background-color: #333; 
+    color: #fff;
+    font-size: large;
+padding: 10px 20px; border: none;
+border-radius: 5px; cursor: pointer;
+}
+
+button[type="submit"]:hover
+{background-color: #8a0e0e;
+
+}
+</style>
+<body>
+<center><h1>Registration</h1>
+<form th:action="@{/registersucc}" method="post" th:object="${frm}">
+<h3>Name: <input type:"text" th:field="*{name}"/><br><br> Email: <input type:"text" th:field="*{email}"/><br><br>
+Password:<input type="password" th:field="*{password}"/><br><br> Dob:<input type="date" th:field="*{dob}"/><br><br>
+Gender:<input type="radio" id="male"name="gender"value="male"th:field="*{gender}">
+<label for="male">Male</label>
+<input type="radio" id="female"name="gender"value="female"th:field="*{gender}">
+<label for="male">Female</label><br><br> 
+Education:<br>
+<input type="checkbox" id="Bachelor's Degree" name="dishes" value="Bachelor's Degree">
+<label for="Bachelor's Degree">Bachelor's Degree</label><br>
+<input type="checkbox" id="Master's Degree" name="dishes" value="Master's Degree">
+<label for="Master's Degree">Master's Degree</label><br>
+<input type="checkbox" id="Phd" name="dishes" value="Phd">
+<label for="Phd">Phd</label><br><br>
+
+Feedback:<br>
+<textarea cols="30" rows="5"name="Feedback"th:field="*{feed}"></textarea><br><br>
+<label for="location">Location:</label>
+<select name="location" id="location">
+<option value="Select">Select</option>
+<option value="Erode">Erode</option>
+<option value="Chennai">Chennai</option>
+<option value="Salem">Salem</option>
+<option value="Coimbatore">Coimbatore</option>
+<option value="Namakkal">Namakkal</option>
+</select>
+<br><br>
+<div>
+<button type="submit">Submit</button>
+</div></center>
+</form>
+</body>
+</html>
